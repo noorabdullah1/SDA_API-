@@ -6,8 +6,10 @@ import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.Objects;
 
 import static io.restassured.RestAssured.given;
+import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class C09_GroovyLanguage extends JsonPlaceHolderBaseUrl {
@@ -62,20 +64,27 @@ public class C09_GroovyLanguage extends JsonPlaceHolderBaseUrl {
 
 //        3)Print all 'completeds' whose ids are less than 5 on the console
 //        Assert that the number of 'completeds' whose ids are less than 5 is 4
-        List<Boolean> completedLessThan5 = json.getList("findAll{it.id<5}.completed = ");
-        System.out.println("completedLessThan5 = " + completedLessThan5);
-
-        json.getList("findAll{it.completed==false}.id")
-
+        List<Boolean> completedsLessThan5 = json.getList("findAll{it.id<5}.completed");
+        System.out.println("completedsLessThan5 = " + completedsLessThan5);
+        assertTrue(completedsLessThan5.size()==4);
 
 //        4)Print all titles whose ids are greater than 195
 //        Assert that "quis eius est sint explicabo" is one of the titles whose id is less than 5
+        List<String> titlesIdGreaterThan195 =  json.getList("findAll{it.id>195}.title");
+        System.out.println("titlesIdGreaterThan195 = " + titlesIdGreaterThan195);
+        String expectedTitle = "quis eius est sint explicabo";
+        assertTrue(titlesIdGreaterThan195.contains(expectedTitle));
 
 
 //        5)Print id whose title is "quo adipisci enim quam ut ab"
 //        Assert that id is 8
 
+        Object id = json.getList("findAll{it.title=='quo adipisci enim quam ut ab'}.id").get(0);
+        List<Integer> idList2 = json.getList("findAll{it.title=='quo adipisci enim quam ut ab'}.id");
 
+        int id2 = idList2.get(0);
+        System.out.println("id = " + id);
+        assertEquals(8,id);
 
     }
 
