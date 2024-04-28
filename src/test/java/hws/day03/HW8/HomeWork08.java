@@ -1,12 +1,13 @@
-package hws.day03;
+package hws.day03.HW8;
 
+import hws.day03.HW12.PojoHW8;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
-public class HomeWork08 extends BaseUrlHW8{
+public class HomeWork08 extends BaseUrlHW8 {
     /*
         Given
             1) https://reqres.in/api/users

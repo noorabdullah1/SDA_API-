@@ -1,4 +1,4 @@
-package hws.day03;
+package hws.day03.HW12;
 
 import io.restassured.response.Response;
 import org.testng.annotations.Test;

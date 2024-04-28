@@ -1,4 +1,4 @@
-package hws.day03;
+package hws.day03.HW12;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

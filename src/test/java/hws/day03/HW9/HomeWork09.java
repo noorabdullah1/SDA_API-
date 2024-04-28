@@ -1,11 +1,12 @@
-package hws.day03;
+package hws.day03.HW9;
 
+import hws.day03.HW12.UserPojoHW2;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
-public class HomeWork09 extends BaseUrlHW9_10{
+public class HomeWork09 extends BaseUrlHW9_10 {
 /*
 Write an automation test that will create a 'user'
 using the "https://petstore.swagger.io/" document

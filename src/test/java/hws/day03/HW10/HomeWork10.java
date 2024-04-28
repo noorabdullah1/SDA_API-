@@ -1,4 +1,5 @@
-package hws.day03;
+package hws.day03.HW10;
+import hws.day03.HW9.BaseUrlHW9_10;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;

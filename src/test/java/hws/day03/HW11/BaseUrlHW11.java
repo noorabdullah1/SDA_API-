@@ -1,4 +1,4 @@
-package hws.day03;
+package hws.day03.HW11;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
