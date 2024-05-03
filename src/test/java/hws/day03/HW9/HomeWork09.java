@@ -1,6 +1,6 @@
 package hws.day03.HW9;
 
-import hws.day03.HW12.UserPojoHW2;
+import hws.day03.HW12.UserPojoHW12;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
@@ -17,7 +17,7 @@ using the "https://petstore.swagger.io/" document
         //Set Url
         spec.pathParam("first","user");
         //Set Expected Data
-        UserPojoHW2 payLoad =new UserPojoHW2(0
+        UserPojoHW12 payLoad =new UserPojoHW12(0
                 ,"UserTest"
                 ,"userFirstName"
                 ,"userLastName"
@@ -34,7 +34,7 @@ using the "https://petstore.swagger.io/" document
         spec.pathParam("second",payLoad.getUsername());
         response = given(spec).when().get("{first}/{second}");
         response.prettyPrint();
-        UserPojoHW2 actualData = response.as(UserPojoHW2.class);
+        UserPojoHW12 actualData = response.as(UserPojoHW12.class);
         //Do Assertions For GET Request
         assertEquals(payLoad.getUsername(), actualData.getUsername());
         assertEquals(payLoad.getFirstName(),actualData.getFirstName());

@@ -1,22 +1,24 @@
-package hws.day03.HW12;
+package hws.day03.HW9;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import hws.day03.HW12.PetCategoryPojoHW12;
+import hws.day03.HW12.PetTagPojoHW12;
 
 import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class PojoHW12 {
+public class UserPojoHW8 {
     private Integer id;
-    private CategoryPojoHW12 category;
+    private PetCategoryPojoHW12 category;
     private String name;
     private List<String> photoUrls;
-    private List<TagPojoHW12> tags;
+    private List<PetTagPojoHW12> tags;
     private String status;
 
-    public PojoHW12() {
+    public UserPojoHW8() {
     }
 
-    public PojoHW12(Integer id, CategoryPojoHW12 category, String name, List<String> photoUrls, List<TagPojoHW12> tags, String status) {
+    public UserPojoHW8(Integer id, PetCategoryPojoHW12 category, String name, List<String> photoUrls, List<PetTagPojoHW12> tags, String status) {
         this.id = id;
         this.category = category;
         this.name = name;
@@ -33,11 +35,11 @@ public class PojoHW12 {
         this.id = id;
     }
 
-    public CategoryPojoHW12 getCategory() {
+    public PetCategoryPojoHW12 getCategory() {
         return category;
     }
 
-    public void setCategory(CategoryPojoHW12 category) {
+    public void setCategory(PetCategoryPojoHW12 category) {
         this.category = category;
     }
 
@@ -57,11 +59,11 @@ public class PojoHW12 {
         this.photoUrls = photoUrls;
     }
 
-    public List<TagPojoHW12> getTags() {
+    public List<PetTagPojoHW12> getTags() {
         return tags;
     }
 
-    public void setTags(List<TagPojoHW12> tags) {
+    public void setTags(List<PetTagPojoHW12> tags) {
         this.tags = tags;
     }
 

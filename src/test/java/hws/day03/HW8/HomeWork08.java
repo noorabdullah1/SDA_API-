@@ -1,6 +1,5 @@
 package hws.day03.HW8;
 
-import hws.day03.HW12.PojoHW8;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
@@ -31,13 +30,13 @@ public class HomeWork08 extends BaseUrlHW8 {
         //Set Url
         spec.pathParam("first","users");
         //Set expected Data
-        PojoHW8 payLoad = new PojoHW8("morpheus","leader");
+        PetPojoHW8 payLoad = new PetPojoHW8("morpheus","leader");
 
         //Sent POST Request
         Response response = given(spec).body(payLoad).when().post("{first}");
         response.prettyPrint();
 
-        PojoHW8 actualData= response.as(PojoHW8.class);
+        PetPojoHW8 actualData= response.as(PetPojoHW8.class);
         //Do Assertions
         assertEquals(201,response.statusCode());
         assertEquals(payLoad.getName(),actualData.getName());

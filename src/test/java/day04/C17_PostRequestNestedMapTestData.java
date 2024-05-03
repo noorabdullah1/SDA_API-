@@ -6,7 +6,6 @@ import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import testdata.RestFulTestData;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;

@@ -1,5 +1,6 @@
 package hws.day03.HW12;
 
+import hws.day03.HW9.UserPojoHW8;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
@@ -18,7 +19,7 @@ public class HomeWork12 extends BaseUrlHW12{
 (All actions must be done on same pet)
 (Use Pojo)
  */
-public static PojoHW12 payLoad;
+public static UserPojoHW8 payLoad;
     public Integer id = 12555553;
     @Test
     public void postRequest(){
@@ -26,11 +27,11 @@ public static PojoHW12 payLoad;
         spec.pathParam("first","pet");
         //Set expected Data
         //Create a List of tags to match Json Syntax type
-        List<TagPojoHW12> tagList= new ArrayList<>();
-        tagList.add(new TagPojoHW12(11,"Tag4"));
+        List<PetTagPojoHW12> tagList= new ArrayList<>();
+        tagList.add(new PetTagPojoHW12(11,"Tag4"));
 
-        payLoad = new PojoHW12(id
-                ,new CategoryPojoHW12(555,"cat")
+        payLoad = new UserPojoHW8(id
+                ,new PetCategoryPojoHW12(555,"cat")
                 ,"Kitten"
                 ,new ArrayList<String>(Arrays.asList("image1","image2"))
                 ,tagList
@@ -40,7 +41,7 @@ public static PojoHW12 payLoad;
         Response response = given(spec).body(payLoad).when().post("{first}");
         response.prettyPrint();
 
-        PojoHW12 actualData= response.as(PojoHW12.class);
+        UserPojoHW8 actualData= response.as(UserPojoHW8.class);
         //Do Assertions
         assertEquals(200,response.statusCode());
         assertEquals(payLoad.getId(),actualData.getId());
@@ -65,7 +66,7 @@ public static PojoHW12 payLoad;
         //Send GET Request
         Response response = given(spec).when().get("{first}/{second}");
         response.prettyPrint();
-        PojoHW12 actualData= response.as(PojoHW12.class);
+        UserPojoHW8 actualData= response.as(UserPojoHW8.class);
         //Do Assertions
         assertEquals(200,response.statusCode());
         assertEquals(payLoad.getId(),actualData.getId());
@@ -90,7 +91,7 @@ public static PojoHW12 payLoad;
         Response response = given(spec).body(payLoad).when().put("{first}");
         response.prettyPrint();
 
-        PojoHW12 actualData= response.as(PojoHW12.class);
+        UserPojoHW8 actualData= response.as(UserPojoHW8.class);
         //Do Assertions
         assertEquals(200,response.statusCode());
         assertEquals(payLoad.getId(),actualData.getId());

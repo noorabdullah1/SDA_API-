@@ -3,7 +3,7 @@ package hws.day03.HW12;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserPojoHW2 {
+public class UserPojoHW12 {
 
         private Integer id;
         private String username;
@@ -14,10 +14,10 @@ public class UserPojoHW2 {
         private String phone;
         private Integer userStatus;
 
-        public UserPojoHW2() {
+        public UserPojoHW12() {
         }
 
-        public UserPojoHW2(Integer id, String username, String firstName, String lastName, String email, String password, String phone, Integer userStatus) {
+        public UserPojoHW12(Integer id, String username, String firstName, String lastName, String email, String password, String phone, Integer userStatus) {
             this.id = id;
             this.username = username;
             this.firstName = firstName;

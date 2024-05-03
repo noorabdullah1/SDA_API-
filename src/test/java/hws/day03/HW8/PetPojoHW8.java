@@ -1,17 +1,17 @@
-package hws.day03.HW12;
+package hws.day03.HW8;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class PojoHW8 {
-    public PojoHW8() {
+public class PetPojoHW8 {
+    public PetPojoHW8() {
     }
 
     private String name;
     private String job;
 
-    public PojoHW8(String name, String job) {
+    public PetPojoHW8(String name, String job) {
         this.name = name;
         this.job = job;
     }

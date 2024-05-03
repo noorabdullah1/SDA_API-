@@ -3,15 +3,14 @@ package hws.day03.HW12;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TagPojoHW12 {
-
+public class PetCategoryPojoHW12 {
     private Integer id;
     private String name;
 
-    public TagPojoHW12() {
+    public PetCategoryPojoHW12() {
     }
 
-    public TagPojoHW12(Integer id, String name) {
+    public PetCategoryPojoHW12(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
